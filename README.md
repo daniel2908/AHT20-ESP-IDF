@@ -38,10 +38,9 @@ static void i2c_setup(){
 void app_main(void)
 {
 
-    aht20_init(17,16); //22=clock 21=data
+    aht20_init(17,16); //clock, data
     i2c_setup();
-    //check_calibration();
-    
+ 
     xTaskCreate(&aht20_read_measures, "task_read_ath20",  10096, NULL, 0, NULL);
 }
 
