@@ -60,9 +60,7 @@ void aht20_read_measures(void *ignore){
         i2c_master_stop(cmd_handle);
         i2c_master_cmd_begin(I2C_NUM_0, cmd_handle, 800 / portTICK_RATE_MS);
         i2c_cmd_link_delete(cmd_handle);
-
-        //uint32_t rh = ((uint32_t)data[1] << 16 | (uint32_t)data[2] << 8 | (uint32_t)data[3] )>> 4;
-        //uint32_t temp = ( (uint32_t)(data[3]& 0x0f) << 16)| ((uint32_t) data[4] )<< 8 | (uint32_t) data[5]; //0x0f pads 4 bits
+        
         uint32_t rh = ( ((uint32_t)data[1] << 16) | ((uint32_t)data[2] << 8) | (data[3]) ) >> 4 ;
         uint32_t temp = ((uint32_t)(data[3]&0x0F) << 16) | ((uint32_t)data[4] << 8) | (uint32_t)data[5] ;
 
