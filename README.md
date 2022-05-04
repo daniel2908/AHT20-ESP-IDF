@@ -6,7 +6,7 @@ A simple driver for the esp32 using the IDF framework, currently assuming i2c mo
 
 ## How to use example
 
-```
+```C
 static i2c_config_t aht20_i2c_conf = {
     .mode = I2C_MODE_MASTER,
     .sda_io_num = 16, //default pin for SDA
