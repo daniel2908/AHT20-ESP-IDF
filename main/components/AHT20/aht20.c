@@ -49,7 +49,7 @@ void trigger_measure(){
 
 void aht20_read_measures(void *ignore){
     
-    vTaskDelay(100 / portTICK_PERIOD_MS);
+    vTaskDelay(200 / portTICK_PERIOD_MS);
     uint8_t data[7]= {0,0,0,0,0,0,0};
     while(1){
         trigger_measure();
@@ -65,14 +65,11 @@ void aht20_read_measures(void *ignore){
         uint32_t temp = ((uint32_t)(data[3]&0x0F) << 16) | ((uint32_t)data[4] << 8) | (uint32_t)data[5] ;
 
 
-
-        temp = (float) (temp *(0.00019F)-50);
-        rh = (float) (rh * (0.000095F));
-        aht20_data.temperature = temp;
-        aht20_data.rel_humidity = rh;
+        aht20_data.temperature = (temp *(0.00019073F)-50);
+        aht20_data.rel_humidity = (rh * (0.0000953674316F));
         printf("Temperature is %3.2f\n", (float)temp);
         printf("Humidity is %3.2f\n", (float)rh);
-        vTaskDelay(2000 / portTICK_PERIOD_MS);
+        vTaskDelay(300 / portTICK_PERIOD_MS);
     }
 
 }
