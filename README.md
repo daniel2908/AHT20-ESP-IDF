@@ -4,8 +4,7 @@ A simple driver for the esp32 using the IDF framework, currently assuming i2c mo
 
 # _BUGS and TODO_
 ### Bugs 
-Currently the first collected data is garbage, I probably need to add another delay to give it time to setup the bus. 
-Data is supposed to be a float, but currently there is data loss somewhere and data is only returned as a whole number. 
+None known :)
 
 ### Todo
 Need to add interupt functionality and make the code less ugly.
