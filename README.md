@@ -8,6 +8,7 @@ None known :)
 
 ### Todo
 Need to add interupt functionality and make the code less ugly.
+Need to allow the ability to change the delay, check the checksum and status
 
 ## How to use example
 First create the i2c_config and i2c_setup as below, and initialize the gpio and call the `aht20_read_measures` in a task, or in your super loop.
