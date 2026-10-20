@@ -1,3 +1,5 @@
+#DOESNT WORK AFTER ESP-IDF updates. Please see driver implementation for your own use :)
+
 # _AHT20 driver for the ESP-IDF framework_
 
 A simple driver for the esp32 using the IDF framework, currently assuming i2c mode is set to master and missing some functionality like interrupts and some RTOS things. Provided is an example labeled _main.c_ as well as a module that can be found in the _/components/AHT20_ folder.
