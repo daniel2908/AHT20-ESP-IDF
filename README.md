@@ -1,4 +1,4 @@
-#DOESNT WORK AFTER ESP-IDF updates. Please see driver implementation for your own use :)
+# DOESNT WORK AFTER ESP-IDF updates. Please see driver implementation for your own use :)
 
 # _AHT20 driver for the ESP-IDF framework_
 
